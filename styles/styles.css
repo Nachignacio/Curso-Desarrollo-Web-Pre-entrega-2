@@ -1,0 +1,204 @@
+/*Agrego la fuente descargada a las fuentes para la pagina*/
+
+@font-face{
+    font-family: Carena-Regular;
+    font-weight: bold;
+    src: url(../fonts/Carena-Regular.otf) format("opentype");
+}
+
+/*Reseteo los valores seteados del navegador. Si no pongo esto, se me crea un margen por default que crea un marco blanco en la pagina*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Le doy color de fondo a la pagina*/
+
+body{
+    background-color: #fbd1e0;
+}
+
+/*Utilizo la fuente descargada para el titulo de la pagina y le doy espacio al logo de pagina*/
+
+h1 p{
+    font-family: Carena-Regular;
+    position: relative;
+    top: 10px;
+    padding: 20px;
+}
+
+/*Esto es para que el logo de la pagina quede justificado en el centro. Si no usaba flex no me salia bien justificar el logo de la pagina en el centro*/
+
+h1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Este es un intento de hacer que la barra de navegacion me quede tipo sticky y se me quede en el tope de la pagina a medida que hago scroll hacia abajo, pero a pesar de que 
+agrego esto, la barra no se me pega al viewport, no se por que*/
+
+nav{
+    position: sticky;
+    top: 50px;
+}
+
+/*No me queda otra opcion que usar el display: flex para poder ubicar los botones del nav de manera que ocupen todo el espacio de la pagina. Estuve tratando de hacerlo sin el
+flex pero siempre que usaba porcentajes para dar un width relativo a la pagina total para los botones me quedaba un margen. Por ejemplo, ponia 20$% en width a los botones del nav
+pero igual me quedaba un margen entre el ultimo boton (Contacts) y el borde de la pagina web, y a medida que achicaba la ventana este margen empeoraba y se me desplazaba el 
+boton de Contacts hacia una seguna fila en el nav. Una vez que aplique flex esto dejo de suceder*/
+
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0%;
+    border: 0;
+}
+
+/*Formato de los botones para el nav*/
+
+header nav ul li{
+    border-style: solid;
+    border-width: 1px;
+    font-family: Carena-Regular;
+    background-color: #cb768d;
+    width: 100%; /*La idea del 20% es para que con el total de los 5 elementos del navegador se me ocupe la totalidad del ancho de la pagina*/
+    text-align: center; /*Quiero que el texto en los botones este con justificacion en el centro*/
+}
+
+
+
+
+/*Posicionamiento de la imagen en Introduction, la intencion que tengo es de ponerlo al costado y a su derecha el texto introductorio al sitio web*/
+
+#introimage{
+    position: absolute;
+    top: 200px;
+    display: inline-block;
+    width: 20%;
+    border-radius: 40px;
+    margin-left: 1%;
+}
+
+/*Esto es para que el color del texto del boton que indique la pagina actual se encuentre en negro, haciendo override al color asignado a los textos del nav 
+en siguiente bloque de codigo*/
+
+#actual{
+    color: black;
+}
+
+/*Formato de las letras del navegador*/
+
+header nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+/*El display inline para que se coloque luego de la imagen y darle un espacio entre la imagen y el borde de la pagina para que se ordene mejor el texto*/
+
+#intro{
+    display: inline;
+    margin-left: 50px;
+    position: absolute;
+    top: 200px;
+    margin-left: 22%;
+    margin-right: 5%;
+}
+
+/*Para darle un espacio entre el primer texto de Contacts con el navegador, y margen al texto*/
+
+.socialmedia{
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+/*Para ordenar los items "Instagram, YouTube, etc..."*/
+
+#socialmedialist li{
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*Espaciado entre zonas de texto en formulario de Contacts*/
+
+form div{
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+/*Espaciado entre navegador y primer texto de Uploads*/
+
+.uploads{
+    padding: 20px;
+}
+
+/*Espaciado entre video subido en Uploads y todo lo demas*/
+
+.uploads iframe{
+    margin: 50px;
+}
+
+/*Espaciado entre navegador y primer texto en Requests*/
+
+.requests{
+    padding: 20px;
+}
+
+/*Espaciado entre texto y lista de solicitudes en Requests*/
+
+.requests p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*Espaciado entre navegador y primer texto en Speedruns*/
+
+.speedruns{
+    padding: 20px;
+}
+
+/*Espaciado entre parrafo y videos de Speedruns*/
+
+.speedruns p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*Texto momentaneo indicando que no hay nada subido en gris y italic*/
+
+#noupload {
+    font-style: italic;
+    color: grey;
+}
+
+/*Formato de botones para que sea clickeable todo el boton del navegador y no solo el texto del ancla, tambien se agrega animacion de hover*/
+
+.navbutton{
+    background-color: #cb768d;
+    border: none; /*El borde ya esta dado por el parent list item*/
+    font-family: Carena-Regular;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.6;
+    /*transition: 2s;*/ /*Comento esta linea de CSS porque me interesaba agregarle una animacion al boton luego de hacerle click, pero no se por que la animacion sucedia solo
+    cuando hacia click en Uploads y Requests. Cuando se hacia click en Introduction, Contact y Speedruns no surgia animacion asi que lo comento para que no se aplique pero no
+    termine de entender por que con algunos si y otros no animaba*/
+    display: inline-block;
+    width: 100%; /*Le pogno esto para que el boton ocupe todo el espacio del ancla, de esta forma la propiedad del hover (cambio de opacidad en la letra) se dispara cuando el mousse
+    pase por encima de cualquier parte del boton, y no solo por encima del texto*/
+    cursor: pointer; /*Con esta linea, el mousse cambia a una manito cuando pasa por encima del boton para indicar que se puede hacer click ahi*/
+    padding: 7px;
+}
+
+/*Con esta parte agrega la opacidad que quiero cuando pase el mouse por el boton*/
+
+.navbutton:hover{
+    opacity: 1;
+}
