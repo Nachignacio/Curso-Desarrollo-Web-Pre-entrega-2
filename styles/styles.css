@@ -41,15 +41,16 @@ agrego esto, la barra no se me pega al viewport, no se por que*/
 
 nav{
     position: sticky;
-    top: 50px;
+    top: 0;
+    z-index: 999;
 }
 
 /*No me queda otra opcion que usar el display: flex para poder ubicar los botones del nav de manera que ocupen todo el espacio de la pagina. Estuve tratando de hacerlo sin el
 flex pero siempre que usaba porcentajes para dar un width relativo a la pagina total para los botones me quedaba un margen. Por ejemplo, ponia 20$% en width a los botones del nav
-pero igual me quedaba un margen entre el ultimo boton (Contacts) y el borde de la pagina web, y a medida que achicaba la ventana este margen empeoraba y se me desplazaba el 
+pero igual me quedaba un margen entre el ultimo boton (Contacts) y el borde de la pagi  na web, y a medida que achicaba la ventana este margen empeoraba y se me desplazaba el 
 boton de Contacts hacia una seguna fila en el nav. Una vez que aplique flex esto dejo de suceder*/
 
-header nav ul{
+nav ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -60,7 +61,7 @@ header nav ul{
 
 /*Formato de los botones para el nav*/
 
-header nav ul li{
+nav ul li{
     border-style: solid;
     border-width: 1px;
     font-family: Carena-Regular;
@@ -70,19 +71,41 @@ header nav ul li{
 }
 
 
-
+.divimage{
+    display: flex;
+    flex-direction: row;
+}
 
 /*Posicionamiento de la imagen en Introduction, la intencion que tengo es de ponerlo al costado y a su derecha el texto introductorio al sitio web*/
 
 #introimage{
-    position: absolute;
-    top: 200px;
-    display: inline-block;
-    width: 20%;
     border-radius: 40px;
     margin-left: 1%;
+    top: 200px;
 }
 
+@media screen and (max-width: 767px){
+    .divimage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    #introimage{
+        height: 35%;
+        width: 35%;    
+    }
+}
+
+
+@media screen and (min-width: 991px){
+    #introimage{
+        height: 385px;
+        width: 385px;
+    }
+}
 /*Esto es para que el color del texto del boton que indique la pagina actual se encuentre en negro, haciendo override al color asignado a los textos del nav 
 en siguiente bloque de codigo*/
 
@@ -92,7 +115,7 @@ en siguiente bloque de codigo*/
 
 /*Formato de las letras del navegador*/
 
-header nav ul li a{
+nav ul li a{
     display: block;
     text-decoration: none;
     color: white;
@@ -101,11 +124,9 @@ header nav ul li a{
 /*El display inline para que se coloque luego de la imagen y darle un espacio entre la imagen y el borde de la pagina para que se ordene mejor el texto*/
 
 #intro{
-    display: inline;
     margin-left: 50px;
-    position: absolute;
     top: 200px;
-    margin-left: 22%;
+    margin-left: 15px;
     margin-right: 5%;
 }
 
@@ -113,16 +134,15 @@ header nav ul li a{
 
 .socialmedia{
     margin-left: 20px;
-    padding-top: 10px;
 }
 
 /*Para ordenar los items "Instagram, YouTube, etc..."*/
 
-#socialmedialist li{
-    display: inline-block;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+#socialmedialist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
 }
 
 /*Espaciado entre zonas de texto en formulario de Contacts*/
@@ -135,7 +155,7 @@ form div{
 /*Espaciado entre navegador y primer texto de Uploads*/
 
 .uploads{
-    padding: 20px;
+    margin-left: 20px;
 }
 
 /*Espaciado entre video subido en Uploads y todo lo demas*/
@@ -147,26 +167,24 @@ form div{
 /*Espaciado entre navegador y primer texto en Requests*/
 
 .requests{
-    padding: 20px;
+    margin-left: 20px;
 }
 
 /*Espaciado entre texto y lista de solicitudes en Requests*/
 
 .requests p{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 /*Espaciado entre navegador y primer texto en Speedruns*/
 
 .speedruns{
-    padding: 20px;
+    margin-left: 20px;
 }
 
 /*Espaciado entre parrafo y videos de Speedruns*/
 
 .speedruns p{
-    padding-top: 10px;
     padding-bottom: 10px;
 }
 
