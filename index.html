@@ -15,7 +15,8 @@
     <h1> <!-- Creo el logo de la pagina -->
         <p>Piano Bounty</p>
     </h1>
-    <nav> <!--Empiezo a configurar el navegador de la pagina-->
+    <!--
+    <nav> --> <!--Empiezo a configurar el navegador de la pagina--> <!--
         <ul>
             <li>
                 <a href="./pages/requests.html">
@@ -33,8 +34,8 @@
             </li>
             <li>
                 <a href="./index.html">
-                    <button class="navbutton" id="actual">
-                        <!--Le agrego el id "actual" para usarlo en css y sombrearlo en negro para indicar en que pagina se encuentra el usuario-->
+                    <button class="navbutton" id="actual"> -->
+                        <!--Le agrego el id "actual" para usarlo en css y sombrearlo en negro para indicar en que pagina se encuentra el usuario--> <!--
                         INTRODUCTION
                     </button>
                 </a>
@@ -53,6 +54,19 @@
                 </a>
             </li>
         </ul>
+    </nav>-->
+    <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+        <div class="bg-dark p-4">
+        <h5 class="text-body-emphasis h4">Collapsed content</h5>
+        <span class="text-body-secondary">Toggleable via the navbar brand.</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
     </nav>
     <main>
         <!--Comienza la introduccion al sitio web, explico un poco su razon de ser y me introduzco-->

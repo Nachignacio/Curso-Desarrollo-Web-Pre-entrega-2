@@ -17,6 +17,7 @@
 
 body{
     background-color: #fbd1e0;
+    position: fixed; /*Le pongo position: fixed porque, de otra forma, el body no me ocupa todo el ancho de la pantalla para resoluciones mobile*/
 }
 
 /*Utilizo la fuente descargada para el titulo de la pagina y le doy espacio al logo de pagina*/
@@ -42,7 +43,7 @@ agrego esto, la barra no se me pega al viewport, no se por que*/
 nav{
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 999; /*El z-index es para que al scrollear el nav quede siempre por encima de todo*/
 }
 
 /*No me queda otra opcion que usar el display: flex para poder ubicar los botones del nav de manera que ocupen todo el espacio de la pagina. Estuve tratando de hacerlo sin el
@@ -74,36 +75,41 @@ nav ul li{
 .divimage{
     display: flex;
     flex-direction: row;
+    margin: 2%;
 }
 
 /*Posicionamiento de la imagen en Introduction, la intencion que tengo es de ponerlo al costado y a su derecha el texto introductorio al sitio web*/
 
 #introimage{
     border-radius: 40px;
-    margin-left: 1%;
     top: 200px;
 }
 
 @media screen and (max-width: 767px){
     .divimage{
-        display: flex;
+        display: block;
         flex-direction: column;
-        justify-content: center;
+        text-align: center;
+    }
+    #introimage{
+        height: 50%;
+        width: 50%;
+        border-radius: 7%;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
     #introimage{
         height: 35%;
-        width: 35%;    
+        width: 35%;
     }
 }
 
 
-@media screen and (min-width: 991px){
+@media screen and (min-width: 992px){
     #introimage{
-        height: 385px;
-        width: 385px;
+        height: 369px;
+        width: 333px;
     }
 }
 /*Esto es para que el color del texto del boton que indique la pagina actual se encuentre en negro, haciendo override al color asignado a los textos del nav 
@@ -124,10 +130,9 @@ nav ul li a{
 /*El display inline para que se coloque luego de la imagen y darle un espacio entre la imagen y el borde de la pagina para que se ordene mejor el texto*/
 
 #intro{
-    margin-left: 50px;
+    margin: 25px;
     top: 200px;
-    margin-left: 15px;
-    margin-right: 5%;
+    text-align: justify;
 }
 
 /*Para darle un espacio entre el primer texto de Contacts con el navegador, y margen al texto*/
