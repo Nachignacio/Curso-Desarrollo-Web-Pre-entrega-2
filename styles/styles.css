@@ -13,6 +13,7 @@
     padding: 0;
 }
 
+
 /*Le doy color de fondo a la pagina*/
 
 body{
@@ -46,6 +47,31 @@ nav{
     z-index: 999; /*El z-index es para que al scrollear el nav quede siempre por encima de todo*/
 }
 
+/* Modifico dimensiones del navbar del tipo hmaburguesa de como viene en Bootstrap, intente hacerlo solo llamando a "nav" pero no funciona dentro de "nav", tengo que si o si modificar la clase "navbar"*/
+.navbar{
+    padding: 0;
+    border: solid;
+}
+
+/*Modifico boton*/
+
+nav button{
+    margin: 7px;
+}
+
+/*Le doy borde al boton*/
+
+.navbar-toggler{
+    border: solid;
+    border-color: black;
+}
+
+div .p-4{
+    padding: 5px !important; /*Solo poniendo !important me hace efecto este cambio*/
+}
+
+
+
 /*No me queda otra opcion que usar el display: flex para poder ubicar los botones del nav de manera que ocupen todo el espacio de la pagina. Estuve tratando de hacerlo sin el
 flex pero siempre que usaba porcentajes para dar un width relativo a la pagina total para los botones me quedaba un margen. Por ejemplo, ponia 20$% en width a los botones del nav
 pero igual me quedaba un margen entre el ultimo boton (Contacts) y el borde de la pagi  na web, y a medida que achicaba la ventana este margen empeoraba y se me desplazaba el 
@@ -63,13 +89,13 @@ nav ul{
 /*Formato de los botones para el nav*/
 
 nav ul li{
-    border-style: solid;
-    border-width: 1px;
+    border-style: none;
     font-family: Carena-Regular;
-    background-color: #cb768d;
+    background-color: #300c0c;
     width: 100%; /*La idea del 20% es para que con el total de los 5 elementos del navegador se me ocupe la totalidad del ancho de la pagina*/
     text-align: center; /*Quiero que el texto en los botones este con justificacion en el centro*/
 }
+
 
 
 .divimage{
@@ -96,12 +122,18 @@ nav ul li{
         width: 50%;
         border-radius: 7%;
     }
+    .navdesktop{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
     #introimage{
         height: 35%;
         width: 35%;
+    }
+    .navdesktop{
+        display: none;
     }
 }
 
@@ -111,12 +143,26 @@ nav ul li{
         height: 369px;
         width: 333px;
     }
+    .collapse{
+        display: none;
+    }
+    .navbar{
+        display: none;
+    }
 }
+
 /*Esto es para que el color del texto del boton que indique la pagina actual se encuentre en negro, haciendo override al color asignado a los textos del nav 
 en siguiente bloque de codigo*/
 
 #actual{
-    color: black;
+    background-color: #492b2b;
+    border-radius: 5px;
+}
+
+/*Color del navbar*/
+
+#navbar{
+    background-color: #300c0c;
 }
 
 /*Formato de las letras del navegador*/
@@ -203,7 +249,7 @@ form div{
 /*Formato de botones para que sea clickeable todo el boton del navegador y no solo el texto del ancla, tambien se agrega animacion de hover*/
 
 .navbutton{
-    background-color: #cb768d;
+    background-color: #300c0c;
     border: none; /*El borde ya esta dado por el parent list item*/
     font-family: Carena-Regular;
     color: white;
@@ -225,3 +271,4 @@ form div{
 .navbutton:hover{
     opacity: 1;
 }
+
