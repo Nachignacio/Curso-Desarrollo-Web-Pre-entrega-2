@@ -15,17 +15,17 @@
             <p>Piano Bounty</p>
         </h1>
     </header>
-    <nav> <!--Empiezo a configurar el navegador de la pagina-->
+    <nav class="navdesktop"> <!--Empiezo a configurar el navegador de la pagina-->
         <ul>
             <li>
-                <a href="../pages/requests.html">
+                <a href="./requests.html">
                     <button class="navbutton" id="actual"> <!--Le agrego el id "actual" para usarlo en css y sombrearlo en negro para indicar en que pagina se encuentra el usuario-->
                         REQUESTS
                     </button>
                 </a>
             </li>
             <li>
-                <a href="../pages/uploads.html">
+                <a href="./uploads.html">
                     <button class="navbutton">
                         UPLOADS
                     </button>
@@ -39,13 +39,13 @@
                 </a>
             </li>
             <li>
-                <a href="../pages/speedruns.html">
+                <a href="./speedruns.html">
                     <button class="navbutton">
                         SPEEDRUNS
                     </button></a>
             </li>
             <li>
-                <a href="../pages/contact.html">
+                <a href="./contact.html">
                     <button class="navbutton">
                         CONTACT
                     </button>
@@ -53,18 +53,56 @@
             </li>
         </ul>
     </nav>
+    <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+        <div class="bg-danger-subtle p-4">
+        <a href="./requests.html">
+            <button class="navbutton" id="actual">
+            <!--Le agrego el id "actual" para usarlo en css y sombrearlo en negro para indicar en que pagina se encuentra el usuario-->
+                REQUESTS
+            </button>
+        </a>
+        <a href="./uploads.html">
+            <button class="navbutton">
+                UPLOADS
+            </button>
+        </a>
+        <a href="../index.html">
+            <button class="navbutton">
+                INTRODUCTION
+            </button>
+        </a>
+        <a href="./speedruns.html">
+            <button class="navbutton">
+                SPEEDRUNS
+            </button>
+        </a>
+        <a href="./contact.html">
+            <button class="navbutton">
+                CONTACT
+            </button>
+        </a>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-danger-subtle">
+        <div class="container-fluid" id="navbar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
+    </nav>
     <main class="requests"> <!--La idea aca es poder hacer una lista con temas recomendados-->
         <p>Here you can request any song you'd like to hear recorded in piano version. Here is a list of current requests ordered by numbers of times requested 
         so I can order my priorities.<br>
         Just add them to the following playlist:</p> 
-        
         <!--De momento dejo una playlist de Spotify, lo que me encantaria poder hacer es agregar un widget, ya se de Spotify o no,
         que permita buscar una cancion, que al hacer click en dicha cancion la agregue a una lista y que enumere la cantidad de veces que fue solicitada esa cancion. Como no lo
         se hacer por ahora me limito a poner una playlist de Spotify-->
-
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4pg2LgkzDFMdCcNsXpbswg?utm_source=generator&theme=0" 
-        width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-        loading="lazy"></iframe>
+        <div class="iframediv">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4pg2LgkzDFMdCcNsXpbswg?utm_source=generator&theme=0" 
+            width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+            </iframe>
+        </div>
     </main>
     <p>
         <br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.

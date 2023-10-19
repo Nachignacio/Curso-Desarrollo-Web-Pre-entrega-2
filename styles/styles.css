@@ -18,7 +18,6 @@
 
 body{
     background-color: #fbd1e0;
-    position: fixed; /*Le pongo position: fixed porque, de otra forma, el body no me ocupa todo el ancho de la pantalla para resoluciones mobile*/
 }
 
 /*Utilizo la fuente descargada para el titulo de la pagina y le doy espacio al logo de pagina*/
@@ -45,6 +44,7 @@ nav{
     position: sticky;
     top: 0;
     z-index: 999; /*El z-index es para que al scrollear el nav quede siempre por encima de todo*/
+    width: 100vw; /*Poner 100vw fue la única forma que encontré para que el body deje de quedar más chico que la página en distintas páginas*/
 }
 
 /* Modifico dimensiones del navbar del tipo hmaburguesa de como viene en Bootstrap, intente hacerlo solo llamando a "nav" pero no funciona dentro de "nav", tengo que si o si modificar la clase "navbar"*/
@@ -125,6 +125,15 @@ nav ul li{
     .navdesktop{
         display: none;
     }
+    .navbar{
+        position: sticky;
+        top: 0px;
+        margin-bottom: 2.5%;
+    }
+    .iframeuploads iframe{
+        width: 72vw;
+    }
+    
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
@@ -135,6 +144,15 @@ nav ul li{
     .navdesktop{
         display: none;
     }
+    .navbar{
+        position: sticky;
+        top: 0px;
+        margin-bottom: 2.5%;
+    }
+    .show{
+        position: sticky;
+    }
+
 }
 
 
@@ -211,8 +229,10 @@ form div{
 
 /*Espaciado entre video subido en Uploads y todo lo demas*/
 
-.uploads iframe{
-    margin: 50px;
+.iframeuploads{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*Espaciado entre navegador y primer texto en Requests*/
@@ -226,6 +246,21 @@ form div{
 .requests p{
     margin-bottom: 25px;
 }
+
+.iframediv{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+}
+
+.iframediv iframe{
+    width: 90%;
+    margin-left: -20px;
+}
+
+
 
 /*Espaciado entre navegador y primer texto en Speedruns*/
 
@@ -260,10 +295,9 @@ form div{
     cuando hacia click en Uploads y Requests. Cuando se hacia click en Introduction, Contact y Speedruns no surgia animacion asi que lo comento para que no se aplique pero no
     termine de entender por que con algunos si y otros no animaba*/
     display: inline-block;
-    width: 100%; /*Le pogno esto para que el boton ocupe todo el espacio del ancla, de esta forma la propiedad del hover (cambio de opacidad en la letra) se dispara cuando el mousse
-    pase por encima de cualquier parte del boton, y no solo por encima del texto*/
+    width: 95%; /*Le pogno esto para que el boton ocupe todo el espacio del ancla, de esta forma la propiedad del hover (cambio de opacidad en la letra) se dispara cuando el mousse
+    pase por encima de cualquier parte del boton, y no solo por encima del texto. Lo dejo en 95% porque con 100% supera al nav*/
     cursor: pointer; /*Con esta linea, el mousse cambia a una manito cuando pasa por encima del boton para indicar que se puede hacer click ahi*/
-    padding: 7px;
 }
 
 /*Con esta parte agrega la opacidad que quiero cuando pase el mouse por el boton*/
